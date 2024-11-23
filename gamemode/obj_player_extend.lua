@@ -144,12 +144,9 @@ function meta:ApplyAdrenaline()
 	self:ResetSpeed() 
 	if SERVER then 
 		self.HealthDead = (self.HealthDead or 0) + 10
-		self:SetMaxHealth(self.HealthForADR -self.HealthDead)
-		if GAMEMODE:GetSpecialWave ~= "1hp" then 
-		if self:IsSkillActive(SKILL_ADRENALINE_HP) then
+		self:SetMaxHealth(self.HealthForADR-self.HealthDead)
+		if self:IsSkillActive(SKILL_ADRENALINE_HP) and  GAMEMODE:GetSpecialWave() ~= "1hp"  then
 			self:SetHealth(math.min(self:GetMaxHealth() * 0.1 + self:Health(), self:GetMaxHealth()))
-		else
-			self:SetHealth(math.min(self:Health(), self:GetMaxHealth())) 
 		end
 	end
 	self:EmitSound("player/suit_sprint.wav")	
@@ -157,8 +154,8 @@ function meta:ApplyAdrenaline()
 end
 
 function meta:WearBodyArmor()
+	self:ResetSpeed() 
 	self:SetBodyArmor(100 - self:GetBloodArmor())
-	self:ResetSpeed()
 	self:EmitSound("npc/combine_soldier/gear"..math.random(6)..".wav")
 	return true
 end
@@ -207,9 +204,7 @@ function meta:HealHealth(toheal,healer, wep, ignorebio)
 		end
 		return
 	end
-	if self:Health() < self:GetMaxHealth() then
-		self:SetHealth(newhealth)
-	end
+	self:SetHealth(newhealth)
 	if SERVER and toheal >= 5 then
 		self:PurgeStatusEffects()
 	end

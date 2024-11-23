@@ -36,21 +36,20 @@ SWEP.IronSightsHoldType = "rpg"
 SWEP.ViewModel = "models/weapons/c_shotgun.mdl"
 SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
 
-SWEP.ReloadDelay = 0.4
+SWEP.ReloadDelay = 0.3
 
 SWEP.Primary.Sound = Sound("Weapon_Shotgun.Single")
 SWEP.Primary.Damage = 6
 SWEP.Primary.NumShots = 10
-SWEP.Primary.Delay = 0.65
+SWEP.Primary.Delay = 0.55
 SWEP.Recoil = 1.96
 SWEP.Primary.ClipSize = 8
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "alyxgun"
 SWEP.Primary.DefaultClip = 40
 
-SWEP.ConeMax = 0.1
-SWEP.ConeMin = 0.06
-SWEP.MovingConeOffset = 0.135
+SWEP.ConeMax = 0.06
+SWEP.ConeMin = 0.045
 GAMEMODE:SetupAimDefaults(SWEP,SWEP.Primary)
 
 SWEP.WalkSpeed = SPEED_SLOWER
