@@ -82,13 +82,13 @@ SWEP.WorldModel = "models/weapons/w_crowbar.mdl"
 SWEP.UseHands = true
 
 SWEP.MeleeDamage = 32
-SWEP.MeleeRange = 76
+SWEP.MeleeRange = 78
 SWEP.MeleeSize = 2
 SWEP.Primary.Delay = 0.8
 
-SWEP.WalkSpeed = SPEED_NORMAL
+SWEP.WalkSpeed = SPEED_FAST
 
-SWEP.Stamina = 21
+SWEP.Stamina = 17
 
 SWEP.UseMelee1 = true
 
@@ -116,8 +116,8 @@ end
 function SWEP:PlayerHitUtil(owner, damage, hitent, dmginfo)
 	if SERVER then
 		local blodoarmor = hitent:GetBloodArmor()
-		timer.Simple(0, function() owner:SetBloodArmor(owner:GetBloodArmor()+damage*0.2+blodoarmor*0.25) end)
-		hitent:SetBloodArmor(blodoarmor*0.75)
+		timer.Simple(0, function() owner:SetBloodArmor(owner:GetBloodArmor()+damage*0.2+blodoarmor*0.4) end)
+		hitent:SetBloodArmor(blodoarmor*0.6)
 		owner:AddStamina(blodoarmor*0.8)
 	end
 end

@@ -29,8 +29,6 @@ SWEP.DamageMulBlock = 0.4
 
 SWEP.Stamina = 33
 
-SWEP.HealFromBleed = false
-SWEP.OverHeal = 0
 
 SWEP.Secondary.ClipSize = 1
 SWEP.Secondary.DefaultClip = 1

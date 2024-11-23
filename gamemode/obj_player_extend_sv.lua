@@ -293,7 +293,7 @@ function meta:ProcessDamage(dmginfo)
 				ratio = ratio * 0.6
 				dmginfo:ScaleDamage(0.4)
 			end
-			self:AddBodyArmor(dmginfo:GetDamage()-*ratio)
+			self:AddBodyArmor(dmginfo:GetDamage()-ratio)
 		end
 		if self:GetActiveWeapon() and IsValid(self:GetActiveWeapon()) and self:GetActiveWeapon().ProcessDamage then
 			self:GetActiveWeapon():ProcessDamage(dmginfo)
@@ -561,7 +561,7 @@ function meta:PurgeStatusEffects()
 	end
 	self:RemoveStatus("confusion", false, true)
 	self:RemoveStatus("marked", false, true)
-	if !self:GetActiveWeapon().HealFromBleed then self:RemoveStatus("bleed", false, true) end
+	self:RemoveStatus("bleed", false, true)
 	self:RemoveStatus("poisonrecovery", false, true)
 	self:RemoveStatus("tox", false, true)
 	self:RemoveStatus("stunned", false, true)
