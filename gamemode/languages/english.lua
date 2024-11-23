@@ -228,6 +228,13 @@ LANGUAGE.weapon_telescopic_baton_name				= "Telescopic Baton"
 LANGUAGE.weapon_telescopic_baton_desc				= "A lightweight weapon useful for quick strikes. The more times the wielder hits an enemy in succession, the faster they can swing this weapon."
 LANGUAGE.weapon_murasama_name				= "Murasama"
 LANGUAGE.weapon_murasama_desc				= "Do harakiri on SECONDARY attack and boost damage by 44."
+LANGUAGE.weapon_misericorde_name                            = "Misericorde"
+LANGUAGE.weapon_misericorde_desc                            = "An old knife, once used to kill defeated enemies.\nCan't block, but instead has a 'Critical Hit' ability > that does extra damage from behind and to knocked down enemies\nGibs enemies that have less than 20% of their Health left after 'Critical Hit'\n"
+LANGUAGE.weapon_piercer_name                        = "'Falling Star' Harpoon"
+LANGUAGE.weapon_piercer_desc                        = "Giant ancient spear, reaching for heaven.\nIt's ability allows user to leap forward on high speed and deal enormous amount of damage from sky to its victim."
+LANGUAGE.weapon_sucker_name                        = "Curved blade 'Mosquito'"
+LANGUAGE.weapon_sucker_desc                        = "Weird armature with half-grown blood crystals on it.\nIt drains bleed from you and your enemies but in exchange it restores your hp with it.\nHas an ability to produce blood armor by crystallizing bleed on you"
+
 
 LANGUAGE.weapon_m249_name							= "'Chainsaw' M249"
 LANGUAGE.weapon_m249_desc							= "With a massive 200 round box magazine, this machine gun lays down a barrage of constant, albeit individually small caliber fire. \nFiring this weapon while moving will result in a massive accuracy decrease."

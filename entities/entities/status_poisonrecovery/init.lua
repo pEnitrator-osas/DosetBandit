@@ -10,7 +10,7 @@ end
 function ENT:Think()
 	local owner = self:GetOwner()
 	if GAMEMODE.SpecialWave ~= "1hp" then 
-		owner:SetHealth(math.min(owner:GetMaxHealth(), owner:Health() + 1))
+		owner:SetHealth(math.min(owner:GetMaxHealth() + (owner:GetActiveWeapon().OverHeal or 0), owner:Health() + 1))
 	end
 	if self:GetDamage() <= 0 or not(owner:Team() == TEAM_BANDIT or owner:Team() == TEAM_HUMAN) then
 		self:Remove()
@@ -24,6 +24,6 @@ end
 function ENT:OnRemove()
 	local owner = self:GetOwner()
 	if self:GetDamage() > 0 and (owner:Team() == TEAM_BANDIT or owner:Team() == TEAM_HUMAN) then
-		owner:SetHealth(math.min(owner:GetMaxHealth(), owner:Health() + self:GetDamage()))
+		owner:SetHealth(math.min(owner:GetMaxHealth() + (owner:GetActiveWeapon().OverHeal or 0), owner:Health() + self:GetDamage()))
 	end
 end

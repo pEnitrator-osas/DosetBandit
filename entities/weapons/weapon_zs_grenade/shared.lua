@@ -7,6 +7,7 @@ SWEP.IsConsumable = true
 
 SWEP.Primary.ClipSize = 1
 SWEP.Primary.Automatic = false
+SWEP.Secondary.Automatic = true 
 SWEP.Primary.Ammo = "grenade"
 SWEP.Primary.Delay = 1.25
 SWEP.Primary.DefaultClip = 1
