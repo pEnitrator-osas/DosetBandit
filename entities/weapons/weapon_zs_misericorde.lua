@@ -1,41 +1,42 @@
+
 AddCSLuaFile()
 
 if CLIENT then
 	SWEP.TranslateName = "weapon_misericorde_name"
 	SWEP.TranslateDesc = "weapon_misericorde_desc"
 
-	SWEP.SCKMaterials = {"concrete/concreteceiling001a", "plaster/plasterceiling003a",}
+	SWEP.SCKMaterials = {"concrete/concreteceiling001a", "phoenix_storms/grey_steel", "plaster/plasterceiling003a",}
 
 	SWEP.VElements = {
-		["Blade_Lower"] = { type = "Model", model = "models/props_phx/games/chess/black_rook.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, 0.001, -0.405), angle = Angle(0, 0, -180), size = Vector(0.05, 0.05, 0.075), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
+		["Blade_Lower"] = { type = "Model", model = "models/props_phx/games/chess/black_rook.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, 0.001, -0.405), angle = Angle(0, 0, -180), size = Vector(0.05, 0.05, 0.075), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
 		["Bladev2_Upper"] = { type = "Model", model = "models/hunter/misc/squarecap2x2x2.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Blade_Lower", pos = Vector(0, -0.001, 6.188), angle = Angle(0, -45, 0), size = Vector(0.004, 0.004, 0.15), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "plaster/plasterceiling003a", skin = 0, bodygroup = {} },
-		["Gard"] = { type = "Model", model = "models/props_c17/gravestone003a.mdl", bone = "v_weapon.Knife_Handle", rel = "", pos = Vector(-0.001, 0, 4.569), angle = Angle(0, -23.716, 180), size = Vector(0.22, 0.03, 0.02), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, 0.785, -0.054), angle = Angle(0, 0, -90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Left", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Left", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, -0.785, -0.054), angle = Angle(0, 0, 90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Right", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Right", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "v_weapon.Knife_Handle", rel = "Gard", pos = Vector(0, 0.001, -0.015), angle = Angle(-0.001, 120, 0.001), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.908), angle = Angle(0, 0, 180), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low_end"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.718), angle = Angle(0, 0, 0), size = Vector(0.06, 0.06, 0.1), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low_end+"] = { type = "Model", model = "models/props_phx/games/chess/black_queen.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.966), angle = Angle(0, -30, 0), size = Vector(0.06, 0.06, 0.06), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} }
+		["Gard"] = { type = "Model", model = "models/props_c17/gravestone003a.mdl", bone = "v_weapon.Knife_Handle", rel = "", pos = Vector(-0.001, 0, 4.569), angle = Angle(0, -23.716, 180), size = Vector(0.22, 0.03, 0.02), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, 0.785, -0.054), angle = Angle(0, 0, -90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Left", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Left", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard", pos = Vector(0, -0.785, -0.054), angle = Angle(0, 0, 90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Right", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Gard_Right", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "v_weapon.Knife_Handle", rel = "Gard", pos = Vector(0, 0.001, -0.015), angle = Angle(-0.001, 120, 0.001), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.908), angle = Angle(0, 0, 180), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low_end"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.718), angle = Angle(0, 0, 0), size = Vector(0.06, 0.06, 0.1), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low_end+"] = { type = "Model", model = "models/props_phx/games/chess/black_queen.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "Handle", pos = Vector(0, 0, 5.966), angle = Angle(0, -30, 0), size = Vector(0.06, 0.06, 0.06), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} }
 	}
 	
 	SWEP.WElements = {
-		["Blade_Lower"] = { type = "Model", model = "models/props_phx/games/chess/black_rook.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.001, -0.405), angle = Angle(0, 0, -180), size = Vector(0.05, 0.05, 0.075), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
+		["Blade_Lower"] = { type = "Model", model = "models/props_phx/games/chess/black_rook.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.001, -0.405), angle = Angle(0, 0, -180), size = Vector(0.05, 0.05, 0.075), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
 		["Bladev2_Upper"] = { type = "Model", model = "models/hunter/misc/squarecap2x2x2.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Blade_Lower", pos = Vector(0, -0.001, 6.188), angle = Angle(0, -45, 0), size = Vector(0.004, 0.004, 0.15), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "plaster/plasterceiling003a", skin = 0, bodygroup = {} },
-		["Gard"] = { type = "Model", model = "models/props_c17/gravestone003a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4.784, 1.078, -2.495), angle = Angle(-33.939, 180, -6.713), size = Vector(0.22, 0.03, 0.02), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.785, -0.054), angle = Angle(0, 0, -90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Left", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Left_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Left", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, -0.785, -0.054), angle = Angle(0, 0, 90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Right", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Gard_Right_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Right", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.001, -0.015), angle = Angle(-0.001, 120, 0.001), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.908), angle = Angle(0, 0, 180), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low_end"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.718), angle = Angle(0, 0, 0), size = Vector(0.06, 0.06, 0.1), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} },
-		["Handle_low_end+"] = { type = "Model", model = "models/props_phx/games/chess/black_queen.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.966), angle = Angle(0, -30, 0), size = Vector(0.06, 0.06, 0.06), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "concrete/concreteceiling001a", skin = 0, bodygroup = {} }
+		["Gard"] = { type = "Model", model = "models/props_c17/gravestone003a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4.784, 1.078, -2.495), angle = Angle(-33.939, 180, -6.713), size = Vector(0.22, 0.03, 0.02), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.785, -0.054), angle = Angle(0, 0, -90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Left", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Left_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Left", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right"] = { type = "Model", model = "models/props_c17/lampShade001a.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, -0.785, -0.054), angle = Angle(0, 0, 90), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right_CirclePawn"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Right", pos = Vector(0, 0, -0.397), angle = Angle(0, 0, 0), size = Vector(0.05, 0.05, 0.05), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Gard_Right_Pawn"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard_Right", pos = Vector(0, 0, -0.342), angle = Angle(0, 0, 180), size = Vector(0.055, 0.055, 0.07), color = Color(190, 190, 190, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Gard", pos = Vector(0, 0.001, -0.015), angle = Angle(-0.001, 120, 0.001), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low"] = { type = "Model", model = "models/props_phx/games/chess/black_pawn.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.908), angle = Angle(0, 0, 180), size = Vector(0.06, 0.06, 0.15), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low_end"] = { type = "Model", model = "models/props_phx/games/chess/black_dama.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.718), angle = Angle(0, 0, 0), size = Vector(0.06, 0.06, 0.1), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} },
+		["Handle_low_end+"] = { type = "Model", model = "models/props_phx/games/chess/black_queen.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "Handle", pos = Vector(0, 0, 5.966), angle = Angle(0, -30, 0), size = Vector(0.06, 0.06, 0.06), color = Color(175, 175, 175, 255), surpresslightning = false, bonemerge = false, material = "phoenix_storms/grey_steel", skin = 0, bodygroup = {} }
 	}
 	
 
@@ -53,18 +54,18 @@ SWEP.ViewModel = "models/weapons/cstrike/c_knife_t.mdl"
 SWEP.WorldModel = "models/weapons/w_knife_t.mdl"
 SWEP.UseHands = true
 SWEP.MeleeDamage = 5
-SWEP.MeleeRange = 64 --52
+SWEP.MeleeRange = 64
 SWEP.MeleeSize = 0.875
 SWEP.CanBlock = false
 SWEP.DamageType = DMG_SLASH
 SWEP.m_enemyknocked = false
 SWEP.WalkSpeed = SPEED_FASTEST
-SWEP.NoScaleToLessPlayers = false --true
+SWEP.NoScaleToLessPlayers = true
 
-SWEP.Primary.Delay = 0.2 --0.2
-SWEP.Secondary.Delay = 10 --10
+SWEP.Primary.Delay = 0.2 
+SWEP.Secondary.Delay = 10 
 
-SWEP.Stamina = 6 --6
+SWEP.Stamina = 6
 
 SWEP.HitDecal = "Manhackcut"
 
@@ -105,9 +106,9 @@ end
 
 function SWEP:SecondaryAttack()
 	if not self:CanPrimaryAttack() then return end
-	self.Stamina = 40 --50
-	self.MeleeDamage = 20 --20
-	self.SwingTime = 3 --3
+	self.Stamina = 35
+	self.MeleeDamage = 25 
+	self.SwingTime = 2
 	/*               		здесь можно сделать анимацию для удара, наверное
 	self.HitAnim = 
 	self.MissAnim = 
@@ -142,28 +143,26 @@ function SWEP:Think()
 end
 
 function SWEP:OnMeleeHit(hitent, hitflesh, tr)
-	if self.SwingTime > 0 then
-		if hitent:IsValid() and hitent:IsPlayer() and not self.m_BackStabbing and math.abs(hitent:GetForward():Angle().yaw - self:GetOwner():GetForward():Angle().yaw) <= 100 then
+	if self.SwingTime > 0 and hitent:IsPlayer() then
+		if hitent:IsValid() and not self.m_BackStabbing and math.abs(hitent:GetForward():Angle().yaw - self:GetOwner():GetForward():Angle().yaw) <= 100 then
 			self.m_BackStabbing = true
 			self.MeleeDamage = self.MeleeDamage * 2
 		end
-		if hitent:IsPlayer() then
-			local knocked = hitent:GetStatus("knockdown")
-			if knocked and knocked:IsValid() and not self.m_enemyknocked and hitent:IsPlayer() then
+		local knocked = hitent:GetStatus("knockdown")
+		if knocked and knocked:IsValid() and not self.m_enemyknocked then
 			self.m_enemyknocked = true
 			self.MeleeDamage = self.MeleeDamage * 2
-			end
 		end
 	end
 end
 
 function SWEP:PostHitUtil(owner, hitent, dmginfo, tr, vel)
 	if self.SwingTime > 0 then
-		if hitent:Health()-dmginfo:GetDamage() < hitent:GetMaxHealth()*0.2 and (self.m_BackStabbing or self.m_enemyknocked) then
+		if hitent:Health()-dmginfo:GetDamage() < hitent:GetMaxHealth()*0.15 and (self.m_BackStabbing or self.m_enemyknocked) then
 			-- hitent:RemoveStatus("knockdown",false,true) --убирают статус чтобы разъебать тело с помощью Gibbed (не сработало, возможно не снялся эффект или регдолл не убрался вовремя)
 			-- также такой метод не дает поинтов, как и на охотнике, потому что мы ставим врагу хп на 1
 			if hitent:IsValid() and hitent:IsPlayer() then
-				dmginfo:SetDamage(6666)
+				dmginfo:SetDamage(999)
 				hitent.gibbed = CurTime()
 			end
 
@@ -175,6 +174,7 @@ function SWEP:PostHitUtil(owner, hitent, dmginfo, tr, vel)
 	end
 	self.BaseClass.PostHitUtil(self, owner, hitent, dmginfo, tr, vel)
 end	
+
 if CLIENT then
 	local texGradDown = surface.GetTextureID("VGUI/gradient_down")
 	function SWEP:DrawHUD()
