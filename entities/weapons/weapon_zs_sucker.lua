@@ -193,23 +193,23 @@ function SWEP:Think()
     self.BaseClass.Think(self)
 end
 
---проверить еще несколько раз то что забирает кровь без ошибок
 function SWEP:PlayerHitUtil(owner, damage, hitent, dmginfo)
     if dmginfo:GetDamage() > 0 and hitent:IsPlayer() and hitent:IsValid() then
+        local addbleed = math.Clamp(damage*owner:GetStamina()/100,0,30)
         local enbleed = hitent:GetStatus("bleed")
         if enbleed and enbleed:IsValid() then
-            local steal = math.min(enbleed:GetDamage()*owner:GetStamina()/100,30)
+            local steal = math.min(enbleed:GetDamage()*owner:GetStamina()/100,20)
             enbleed:AddDamage(-steal)
+            addbleed = addbleed + steal
         end
         local ownbleedget = owner:GetStatus("bleed")
-        local ownbleedgive = owner:GiveStatus("bleed")
         if ownbleedget and ownbleedget:IsValid() then
-            ownbleedget:AddDamage(math.Clamp(damage*owner:GetStamina()/100 + (steal or 0),0,40))
+            ownbleedget:AddDamage(addbleed)
             ownbleedget.Damager = owner
         else
             local ownbleedgive = owner:GiveStatus("bleed")
             if ownbleedgive and ownbleedgive:IsValid() then
-                ownbleedgive:SetDamage(math.Clamp(damage*owner:GetStamina()/100 + (steal or 0),0,40))
+                ownbleedgive:SetDamage(addbleed)
                 ownbleedgive.Damager = owner
             end
         end

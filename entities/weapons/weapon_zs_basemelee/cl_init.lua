@@ -17,7 +17,29 @@ function SWEP:DrawWeaponSelection(...)
 	return self:BaseDrawWeaponSelection(...)
 end
 
+local texGradDown = surface.GetTextureID("VGUI/gradient_down")
 function SWEP:DrawHUD()
+	if self:GetParryCD() > CurTime() then
+		local scrW = ScrW()
+		local scrH = ScrH()
+		local width = 100
+		local height = 7
+		local x, y = ScrW()*0.5 - width*0.5 , ScrH()*0.5 + height*3
+		local ratio = math.max(self:GetParryCD()-CurTime(), 0)/((self.ParryWindow+(self:GetOwner():IsSkillActive(SKILL_PARRY_SLOW) and 0.3 or 0))*5)
+		if ratio > 0 then
+			surface.SetDrawColor(5, 5, 5, 180)
+			surface.DrawRect(x, y, width, height)
+			surface.SetTexture(0)
+			surface.SetDrawColor(255, 255, 0, 180)
+			surface.DrawTexturedRect(x, y, width*ratio, height) 
+			surface.SetTexture(texGradDown)
+			surface.SetDrawColor(255, 128, 0, 180)
+			surface.DrawTexturedRect(x, y, width*ratio, height)
+			surface.SetDrawColor(5, 5, 0, 180)
+			surface.DrawOutlinedRect(x - 1, y - 1, width + 2, height + 2) 
+		end
+		--draw.SimpleText("Parry Cooldown: "..self:GetParryCD()-CurTime(), "ZSHUDFontSmallest", x, y - height*5)
+	end
 	if GetConVarNumber("crosshair") ~= 1 then return end
 	self:DrawCrosshairDot()
 end

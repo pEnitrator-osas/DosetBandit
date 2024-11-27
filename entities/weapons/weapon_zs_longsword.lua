@@ -92,10 +92,7 @@ function SWEP:SecondaryAttack()
 				self:SetIsCharging(true)
 			end
 		else
-			self:SetBlock(true)
-			self:SetHoldType("revolver")
-			self:SetWeaponSwingHoldType("revolver")
-			self:SetChargeBlock(true) 
+			self.BaseClass.SecondaryAttack(self)
 			self:SetChargePerc(0)
 			self:SetIsCharging(false)
 		end

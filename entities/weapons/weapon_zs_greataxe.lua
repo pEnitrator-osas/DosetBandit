@@ -37,20 +37,21 @@ SWEP.HoldType = "melee"
 
 SWEP.Stamina = 33
 
-SWEP.MeleeDamage = 75
-SWEP.MeleeRange = 60
+SWEP.MeleeDamage = 70
+SWEP.MeleeRange = 66
 SWEP.MeleeSize = 1.5
-SWEP.Primary.Delay = 1
+SWEP.Primary.Delay = 1.2
 
 SWEP.DamageType = DMG_SLASH
 
 SWEP.WalkSpeed = SPEED_SLOWEST
-SWEP.SwingTime = 0.4
+SWEP.SwingTime = 0.6
 SWEP.SwingRotation = Angle(0, -20, -40)
 SWEP.SwingOffset = Vector(10, 0, 0)
 SWEP.SwingHoldType = "melee"
 
-SWEP.MaxDefenseStacks = 20
+SWEP.MaxDefenseStacks = 100
+SWEP.StacksRegenTick = 0
 
 function SWEP:SetupDataTables()
 	self:NetworkVar("Int", 11, "DefenseStacks")
@@ -90,13 +91,21 @@ function SWEP:PlayerHitUtil(owner, damage, hitent, dmginfo)
 	hitent:MeleeViewPunch(damage*0.1)
 	if SERVER then
 		if hitent:WouldDieFrom(damage, dmginfo:GetDamagePosition()) then
-			self:SetDefenseStacks(math.min(self:GetDefenseStacks()+3,self.MaxDefenseStacks))
+			self:SetDefenseStacks(math.min(self:GetDefenseStacks()+math.Round(self.MaxDefenseStacks*0.5),self.MaxDefenseStacks))
 			self:EmitSound("common/warning.wav", 75, math.random(55, 75),0.5,CHAN_AUTO+21)
 		else
-			self:SetDefenseStacks(math.min(self:GetDefenseStacks()+1,self.MaxDefenseStacks))	
+			self:SetDefenseStacks(math.min(self:GetDefenseStacks()+math.Round(self.MaxDefenseStacks*0.15),self.MaxDefenseStacks))	
 			self:EmitSound("common/warning.wav", 75, math.random(55, 75),0.5,CHAN_AUTO+21)		
 		end
 	end
+end
+
+function SWEP:Think()
+	if self.StacksRegenTick <= CurTime() and self:GetDefenseStacks() < self.MaxDefenseStacks then
+		self:SetDefenseStacks(math.min(self:GetDefenseStacks()+5,self.MaxDefenseStacks))
+		self.StacksRegenTick = CurTime() + 10
+	end
+	self.BaseClass.Think(self)
 end
 
 function SWEP:ProcessDamage(dmginfo)
