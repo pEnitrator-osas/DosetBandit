@@ -31,7 +31,7 @@ SWEP.UseHands = true
 SWEP.MeleeDamage = 60
 SWEP.MeleeRange = 75
 SWEP.MeleeSize = 4
-SWEP.MeleeKnockBack = 150
+SWEP.MeleeKnockBack = 300
 
 SWEP.BlockVsMelee = 0.1
 SWEP.BlockVsDissolve = 0
@@ -39,7 +39,7 @@ SWEP.BlockVsDissolve = 0
 
 
 
-SWEP.Primary.Delay = 2.25
+SWEP.Primary.Delay = 2.55
 
 SWEP.WalkSpeed = SPEED_SLOWEST * 0.5
 SWEP.SwingWalkSpeed = SPEED_FASTEST * 1.4
@@ -61,6 +61,9 @@ function SWEP:PlayHitFleshSound()
 end
 
 function SWEP:OnMeleeHit(hitent, hitflesh, tr)
+	if hitent:IsValid() and hitent:IsPlayer() then
+		hitent:GiveStatus("knockdown", 3.4 * (self:GetOwner():GetStamina()/100 - 0.5))
+	end
 	local effectdata = EffectData()
 		effectdata:SetOrigin(tr.HitPos)
 		effectdata:SetNormal(tr.HitNormal)

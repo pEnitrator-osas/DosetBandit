@@ -121,9 +121,6 @@ function SWEP:Think()
 		parry:SetTime(self.ParryWindow+(owner:IsSkillActive(SKILL_PARRY_SLOW) and 0.3 or 0))
 		self:SetParryCD(CurTime() + parry:GetTime()*5)
 		self:SetParryTime(0)
-		print("Parry Status given.")
-		print("ParryCd = ", self:GetParryCD() - CurTime())
-		print("Parry Time = ", parry:GetTime())
 	end	
 
 	--[[if CLIENT then
