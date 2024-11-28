@@ -31,7 +31,7 @@ function ENT:EntityTakeDamage(ent, dmginfo)
 	dmginfo:SetDamage(olddamage*math.min(1-mult, 0.5)) 
 	own:AddStamina(math.Clamp(40/mult,0,100))
 	if mult > 0.9 then 
-		own:GetActiveWeapon():SetParryCD(own:GetActiveWeapon():GetParryCD()*0.6) 
+		own:GetActiveWeapon():SetParryCD(own:GetActiveWeapon():GetParryCD() - (own:GetActiveWeapon():GetParryCD()-CurTime())*0.5) 
 	end
 	local inflictor = dmginfo:GetInflictor()
 	local bruh = inflictor:GetClass()
